@@ -1,33 +1,40 @@
-console.log('running');
-const template = (
+console.log('App.js is running!');
+
+//create app object title/subtitle
+//user title/subtitle in template
+//render template
+
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer'
+};
+
+//JSX - JavaScript XM!
+var template = (
     <div>
-        <h1>Indecision App</h1>
-        <p>This is some info</p>
+        <h1>{app.title}</h1>
+        <p>{app.subtitle}</p>
         <ol>
-        <li>Item one</li>
-        <li>Item two</li>
+            <li>Item onee</li>
+            <li>Item two</li>
         </ol>
     </div>
 );
-const templateTwo = (
-    <div>
-        <h1>Yuvaraj S</h1>
-        <p>Age: 29</p>
-       <p>Location: Bengaluru</p>
-    </div>
-);
-const app = {
-    title: "Indecision App",
-    subtitle: "Put your life in the hands of a compute",
-    options: ['One','Two']
-}
-const templateThree = (
-    <div>
-      <h1>{app.title}</h1>
-      {app.subtitle && <p>{app.subtitle}</p>}
-      <p>{app.options.length > 0 ? 'Here are your options' : 'No options'}</p>
-    </div>
-);
 
-const appRoot = document.getElementById('app');
-ReactDOM.render(templateThree,appRoot);
+var user = {
+    name: 'Yuvaraj',
+    age: 26,
+    location: 'Bangalore'
+}
+var userName = 'Mike';
+var userAge = 27;
+var userLocation = 'Bangalore';
+var templateTwo = (
+    <div>
+        <h1>{user.name}</h1>
+        <p>Age: {user.age}</p>
+        <p>Location: {user.location}</p>
+    </div>
+);
+var appRoot = document.getElementById('app');
+ReactDOM.render(template, appRoot);
